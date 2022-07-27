@@ -1,832 +1,216 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-totoro-96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-totoro-48.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-flat-top.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="疲惫生活中的英雄梦想">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>逸星河</title><meta name="author" content="逸星河"><meta name="copyright" content="逸星河"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="疲惫生活中的英雄梦想">
 <meta property="og:type" content="website">
 <meta property="og:title" content="逸星河">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="逸星河">
 <meta property="og:description" content="疲惫生活中的英雄梦想">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="逸星河">
 <meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://example.com/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>逸星河</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '逸星河',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-07-27 07:32:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-</head>
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">逸星河</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-resources">
-
-    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/26/cssSelector/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="逸星河">
-      <meta itemprop="description" content="疲惫生活中的英雄梦想">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="逸星河">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/26/cssSelector/" class="post-title-link" itemprop="url">CSS Selector</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-07-26 21:20:14 / 修改时间：21:55:58" itemprop="dateCreated datePublished" datetime="2022-07-26T21:20:14+08:00">2022-07-26</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="CSS-选择器"><a href="#CSS-选择器" class="headerlink" title="CSS 选择器"></a>CSS 选择器</h2><table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>例子</th>
-<th>例子描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_class.asp" title="CSS .class 选择器">.<em>class</em></a></td>
-<td>.intro</td>
-<td>选择 class&#x3D;”intro” 的所有元素。</td>
-</tr>
-<tr>
-<td>.<em>class1</em>.<em>class2</em></td>
-<td>.name1.name2</td>
-<td>选择 class 属性中同时有 name1 和 name2 的所有元素。</td>
-</tr>
-<tr>
-<td>.<em>class1</em> .<em>class2</em></td>
-<td>.name1 .name2</td>
-<td>选择作为类名 name1 元素后代的所有类名 name2 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_id.asp" title="CSS #id 选择器">#<em>id</em></a></td>
-<td>#firstname</td>
-<td>选择 id&#x3D;”firstname” 的元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_all.asp" title="CSS * 选择器">*</a></td>
-<td>*</td>
-<td>选择所有元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_element.asp" title="CSS element 选择器"><em>element</em></a></td>
-<td>p</td>
-<td>选择所有 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_element_class.asp" title="CSS element.class 选择器"><em>element</em>.<em>class</em></a></td>
-<td>p.intro</td>
-<td>选择 class&#x3D;”intro” 的所有 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_element_comma.asp" title="CSS element,element 选择器"><em>element</em>,<em>element</em></a></td>
-<td>div, p</td>
-<td>选择所有 <div> 元素和所有 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_element_element.asp" title="CSS element element 选择器"><em>element</em> <em>element</em></a></td>
-<td>div p</td>
-<td>选择 <div> 元素内的所有 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_element_gt.asp" title="CSS element&gt;element 选择器">_element_&gt;<em>element</em></a></td>
-<td>div &gt; p</td>
-<td>选择父元素是 <div> 的所有 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_element_plus.asp" title="CSS element+element 选择器"><em>element</em>+<em>element</em></a></td>
-<td>div + p</td>
-<td>选择紧跟 <div> 元素的首个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_gen_sibling.asp" title="CSS element1~element2 选择器"><em>element1</em>~<em>element2</em></a></td>
-<td>p ~ ul</td>
-<td>选择前面有 <p> 元素的每个 <ul> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attribute.asp" title="CSS [attribute] 选择器">[<em>attribute</em>]</a></td>
-<td>[target]</td>
-<td>选择带有 target 属性的所有元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attribute_value.asp" title="CSS [attribute=value] 选择器">[_attribute_=<em>value</em>]</a></td>
-<td>[target&#x3D;_blank]</td>
-<td>选择带有 target&#x3D;”_blank” 属性的所有元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attribute_value_contain.asp" title="CSS [attribute~=value] 选择器">[<em>attribute</em>~&#x3D;<em>value</em>]</a></td>
-<td>[title~&#x3D;flower]</td>
-<td>选择 title 属性包含单词 “flower” 的所有元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attribute_value_start.asp" title="CSS [attribute|=value] 选择器">[<em>attribute</em>|&#x3D;<em>value</em>]</a></td>
-<td>[lang|&#x3D;en]</td>
-<td>选择 lang 属性值以 “en” 开头的所有元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attr_begin.asp" title="CSS [attribute^=value] 选择器">[_attribute_^&#x3D;<em>value</em>]</a></td>
-<td>a[href^&#x3D;”https”]</td>
-<td>选择其 src 属性值以 “https” 开头的每个 <a> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attr_end.asp" title="CSS [attribute$=value] 选择器">[<em>attribute</em>$&#x3D;<em>value</em>]</a></td>
-<td>a[href$&#x3D;”.pdf”]</td>
-<td>选择其 src 属性以 “.pdf” 结尾的所有 <a> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_attr_contain.asp" title="CSS [attribute*=value] 选择器">[<em>attribute</em>*&#x3D;<em>value</em>]</a></td>
-<td>a[href*&#x3D;”w3schools”]</td>
-<td>选择其 href 属性值中包含 “abc” 子串的每个 <a> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_active.asp" title="CSS :active 选择器">:active</a></td>
-<td>a:active</td>
-<td>选择活动链接。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_after.asp" title="CSS ::after 选择器">::after</a></td>
-<td>p::after</td>
-<td>在每个 <p> 的内容之后插入内容。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_before.asp" title="CSS ::before 选择器">::before</a></td>
-<td>p::before</td>
-<td>在每个 <p> 的内容之前插入内容。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_checked.asp" title="CSS :checked 选择器">:checked</a></td>
-<td>input:checked</td>
-<td>选择每个被选中的 <input> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_default.asp" title="CSS :default 选择器">:default</a></td>
-<td>input:default</td>
-<td>选择默认的 <input> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_disabled.asp" title="CSS :disabled 选择器">:disabled</a></td>
-<td>input:disabled</td>
-<td>选择每个被禁用的 <input> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_empty.asp" title="CSS :empty 选择器">:empty</a></td>
-<td>p:empty</td>
-<td>选择没有子元素的每个 <p> 元素（包括文本节点）。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_enabled.asp" title="CSS :enabled 选择器">:enabled</a></td>
-<td>input:enabled</td>
-<td>选择每个启用的 <input> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_first-child.asp" title="CSS :first-child 选择器">:first-child</a></td>
-<td>p:first-child</td>
-<td>选择属于父元素的第一个子元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_first-letter.asp" title="CSS ::first-letter 选择器">::first-letter</a></td>
-<td>p::first-letter</td>
-<td>选择每个 <p> 元素的首字母。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_first-line.asp" title="CSS ::first-line 选择器">::first-line</a></td>
-<td>p::first-line</td>
-<td>选择每个 <p> 元素的首行。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_first-of-type.asp" title="CSS :first-of-type 选择器">:first-of-type</a></td>
-<td>p:first-of-type</td>
-<td>选择属于其父元素的首个 <p> 元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_focus.asp" title="CSS :focus 选择器">:focus</a></td>
-<td>input:focus</td>
-<td>选择获得焦点的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_fullscreen.asp" title="CSS :fullscreen 选择器">:fullscreen</a></td>
-<td>:fullscreen</td>
-<td>选择处于全屏模式的元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_hover.asp" title="CSS :hover 选择器">:hover</a></td>
-<td>a:hover</td>
-<td>选择鼠标指针位于其上的链接。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_in-range.asp" title="CSS :in-range 选择器">:in-range</a></td>
-<td>input:in-range</td>
-<td>选择其值在指定范围内的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_indeterminate.asp" title="CSS :indeterminate 选择器">:indeterminate</a></td>
-<td>input:indeterminate</td>
-<td>选择处于不确定状态的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_invalid.asp" title="CSS :invalid 选择器">:invalid</a></td>
-<td>input:invalid</td>
-<td>选择具有无效值的所有 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_lang.asp" title="CSS :lang(language) 选择器">:lang(<em>language</em>)</a></td>
-<td>p:lang(it)</td>
-<td>选择 lang 属性等于 “it”（意大利）的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_last-child.asp" title="CSS :last-child 选择器">:last-child</a></td>
-<td>p:last-child</td>
-<td>选择属于其父元素最后一个子元素每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_last-of-type.asp" title="CSS :last-of-type 选择器">:last-of-type</a></td>
-<td>p:last-of-type</td>
-<td>选择属于其父元素的最后 <p> 元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_link.asp" title="CSS :link 选择器">:link</a></td>
-<td>a:link</td>
-<td>选择所有未访问过的链接。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_not.asp" title="CSS :not(selector) 选择器">:not(<em>selector</em>)</a></td>
-<td>:not(p)</td>
-<td>选择非 <p> 元素的每个元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_nth-child.asp" title="CSS :nth-child(n) 选择器">:nth-child(<em>n</em>)</a></td>
-<td>p:nth-child(2)</td>
-<td>选择属于其父元素的第二个子元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_nth-last-child.asp" title="CSS :nth-last-child(n) 选择器">:nth-last-child(<em>n</em>)</a></td>
-<td>p:nth-last-child(2)</td>
-<td>同上，从最后一个子元素开始计数。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_nth-of-type.asp" title="CSS :nth-of-type(n) 选择器">:nth-of-type(<em>n</em>)</a></td>
-<td>p:nth-of-type(2)</td>
-<td>选择属于其父元素第二个 <p> 元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_nth-last-of-type.asp" title="CSS :nth-last-of-type(n) 选择器">:nth-last-of-type(<em>n</em>)</a></td>
-<td>p:nth-last-of-type(2)</td>
-<td>同上，但是从最后一个子元素开始计数。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_only-of-type.asp" title="CSS :only-of-type 选择器">:only-of-type</a></td>
-<td>p:only-of-type</td>
-<td>选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_only-child.asp" title="CSS :only-child 选择器">:only-child</a></td>
-<td>p:only-child</td>
-<td>选择属于其父元素的唯一子元素的每个 <p> 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_optional.asp" title="CSS :optional 选择器">:optional</a></td>
-<td>input:optional</td>
-<td>选择不带 “required” 属性的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_out-of-range.asp" title="CSS :out-of-range 选择器">:out-of-range</a></td>
-<td>input:out-of-range</td>
-<td>选择值超出指定范围的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_placeholder.asp" title="CSS ::placeholder 选择器">::placeholder</a></td>
-<td>input::placeholder</td>
-<td>选择已规定 “placeholder” 属性的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_read-only.asp" title="CSS :read-only 选择器">:read-only</a></td>
-<td>input:read-only</td>
-<td>选择已规定 “readonly” 属性的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_read-write.asp" title="CSS :read-write 选择器">:read-write</a></td>
-<td>input:read-write</td>
-<td>选择未规定 “readonly” 属性的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_required.asp" title="CSS :required 选择器">:required</a></td>
-<td>input:required</td>
-<td>选择已规定 “required” 属性的 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_root.asp" title="CSS :root 选择器">:root</a></td>
-<td>:root</td>
-<td>选择文档的根元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_selection.asp" title="CSS ::selection 选择器">::selection</a></td>
-<td>::selection</td>
-<td>选择用户已选取的元素部分。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_target.asp" title="CSS :target 选择器">:target</a></td>
-<td>#news:target</td>
-<td>选择当前活动的 #news 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_valid.asp" title="CSS :valid 选择器">:valid</a></td>
-<td>input:valid</td>
-<td>选择带有有效值的所有 input 元素。</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/cssref/selector_visited.asp" title="CSS :visited 选择器">:visited</a></td>
-<td>a:visited</td>
-<td>选择所有已访问的链接。</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="逸星河">
-      <meta itemprop="description" content="疲惫生活中的英雄梦想">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="逸星河">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/06/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-06 16:07:10" itemprop="dateCreated datePublished" datetime="2022-05-06T16:07:10+08:00">2022-05-06</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
       }
     }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
   
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="逸星河"
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">逸星河</p>
-  <div class="site-description" itemprop="description">疲惫生活中的英雄梦想</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/firegithub1s" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;firegithub1s" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:bluewy1@163.com" title="E-Mail → mailto:bluewy1@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
-      链接网站
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="http://yixinghe.cn/" title="http:&#x2F;&#x2F;yixinghe.cn" rel="noopener" target="_blank">逸星河</a>
-        </li>
-    </ul>
-  </div>
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  &copy; 2022/5/6 17:48 – 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">逸星河</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.1k字</span>
-</div>
-
-
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-    <span class="post-meta-divider">|</span>
-    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
-    <span class="post-meta-divider">|</span>
-<!-- 不蒜子计数初始值纠正 -->
-<script>
-$(document).ready(function() {
-
-    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
-    var countOffset = 10000;  // 初始化首次数据
-
-    function fixCount() {
-       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
-        {
-            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset);
-            clearInterval(int);
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
-        if ($("#busuanzi_container_site_pv").css("display") != "none")
-        {
-            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据
-            clearInterval(int); // 停止检测
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
         }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
     }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">逸星河</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">逸星河</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/07/26/cssSelector/" title="CSS Selector">CSS Selector</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-26T13:20:14.000Z" title="发表于 2022-07-26 21:20:14">2022-07-26</time></span></div><div class="content">CSS 选择器
 
-});
-</script>
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
+选择器
+例子
+例子描述
 
 
 
+.class
+.intro
+选择 class&#x3D;”intro” 的所有元素。
 
 
+.class1.class2
+.name1.name2
+选择 class 属性中同时有 name1 和 name2 的所有元素。
 
 
-
-      </div>
-    </footer>
-  </div>
-
-  
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
+.class1 .class2
+.name1 .name2
+选择作为类名 name1 元素后代的所有类名 name2 元素。
 
 
-<script src="/js/schemes/pisces.js"></script>
+#id
+#firstname
+选择 id&#x3D;”firstname” 的元素。
 
 
-<script src="/js/next-boot.js"></script>
+*
+*
+选择所有元素。
 
 
+element
+p
+选择所有  元素。
 
 
-  
+element.class
+p.intro
+选择 class&#x3D;”intro” 的所有  元素。
 
 
+element,element
+div, p
+选择所有  元素和所有  元素。
 
 
+element element
+div p
+选择  元素内的所有  元素。
 
 
+_element_&gt;element
+div &gt; p
+选择父元素是  的所有  元素。
 
 
+element+element
+div + p
+选择紧跟  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/05/06/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-06T08:07:10.810Z" title="发表于 2022-05-06 16:07:10">2022-05-06</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
+More info: Writing
+Run server1$ hexo server
 
+More info: Server
+Generate static files1$ hexo generate
 
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-
-
-
-  
-
-  
-
-</body>
-</html>
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">逸星河</div><div class="author-info__description">疲惫生活中的英雄梦想</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2022/07/26/cssSelector/" title="CSS Selector">CSS Selector</a><time datetime="2022-07-26T13:20:14.000Z" title="发表于 2022-07-26 21:20:14">2022-07-26</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/05/06/hello-world/" title="Hello World">Hello World</a><time datetime="2022-05-06T08:07:10.810Z" title="发表于 2022-05-06 16:07:10">2022-05-06</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-07-26T23:32:12.473Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 逸星河</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
