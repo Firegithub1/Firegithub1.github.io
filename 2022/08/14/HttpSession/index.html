@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HttpSession | 逸星河</title><meta name="keywords" content="HTTP"><meta name="author" content="逸星河"><meta name="copyright" content="逸星河"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="HttpSession详解12345678910111213HttpSession 服务端的技术服务器会为每一个用户 创建一个独立的HttpSessionHttpSession原理当用户第一次访问Servlet时,服务器端会给用户创建一个独立的Session并且生成一个SessionID,这个SessionID在响应浏览器的时候会被装进cookie中,从而被保存到浏览器中当用户再一次访问Servl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HttpSession">
+<meta property="og:url" content="http://example.com/2022/08/14/HttpSession/index.html">
+<meta property="og:site_name" content="逸星河">
+<meta property="og:description" content="HttpSession详解12345678910111213HttpSession 服务端的技术服务器会为每一个用户 创建一个独立的HttpSessionHttpSession原理当用户第一次访问Servlet时,服务器端会给用户创建一个独立的Session并且生成一个SessionID,这个SessionID在响应浏览器的时候会被装进cookie中,从而被保存到浏览器中当用户再一次访问Servl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-08-14T15:22:47.000Z">
+<meta property="article:modified_time" content="2022-08-14T15:24:58.260Z">
+<meta property="article:author" content="逸星河">
+<meta property="article:tag" content="HTTP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/14/HttpSession/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HttpSession',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-14 23:24:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">逸星河</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HttpSession</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-14T15:22:47.000Z" title="发表于 2022-08-14 23:22:47">2022-08-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-14T15:24:58.260Z" title="更新于 2022-08-14 23:24:58">2022-08-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HttpSession"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HttpSession详解"><a href="#HttpSession详解" class="headerlink" title="HttpSession详解"></a>HttpSession详解</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HttpSession 服务端的技术</span><br><span class="line">服务器会为每一个用户 创建一个独立的HttpSession</span><br><span class="line"></span><br><span class="line">HttpSession原理</span><br><span class="line">当用户第一次访问Servlet时,服务器端会给用户创建一个独立的Session</span><br><span class="line">并且生成一个SessionID,这个SessionID在响应浏览器的时候会被装进cookie中,从而被保存到浏览器中</span><br><span class="line">当用户再一次访问Servlet时,请求中会携带着cookie中的SessionID去访问</span><br><span class="line">服务器会根据这个SessionID去查看是否有对应的Session对象</span><br><span class="line">有就拿出来使用;没有就创建一个Session(相当于用户第一次访问)</span><br><span class="line"></span><br><span class="line">域的范围:</span><br><span class="line">    Context域 &gt; Session域 &gt; Request域</span><br><span class="line">    Session域 只要会话不结束就会存在 但是Session有默认的存活时间(30分钟)</span><br></pre></td></tr></table></figure>
+
+<p>　　需要注意的是，一个Session的概念需要包括特定的客户端，特定的服务器端以及不中断的操作时间。A用户和C服务器建立连接时所处的Session同B用户和C服务器建立连接时所处的Session是两个不同的Session。</p>
+<p><strong>session进行身份验证的原理：</strong></p>
+<p>　　当客户端第一次访问服务器的时候，此时客户端的请求中不携带任何标识给服务器，所以此时服务器无法找到与之对应的session，所以会新建session对象，当服务器进行响应的时候，服务器会将session标识放到响应头的Set-Cookie中，会以key-value的形式返回给客户端，例：JSESSIONID&#x3D;7F149950097E7B5B41B390436497CD21；其中JSESSIONID是固定的，而后面的value值对应的则是给该客户端新创建的session的ID，之后浏览器再次进行服务器访问的时候，客户端会将此key-value放到cookie中一并请求服务器，服务器就会根据此ID寻找对应的session对象了；（当浏览器关闭后，会话结束，由于cookie消失所以对应的session对象标识消失，而对应的session依然存在，但已经成为报废数据等待GC回收了）对应session的ID可以利用此方法得到：session.getId();</p>
+<h2 id="1-client-server-connection"><a href="#1-client-server-connection" class="headerlink" title="1.client-server connection"></a>1.client-server connection</h2><ul>
+<li>client与server建立一个连接，这种连接是底层的</li>
+<li>client发送request到server，等待server的answer</li>
+<li>server处理request，将处理结果返还给client，这个结果包括status code、其它data</li>
+</ul>
+<p>在HTTP&#x2F;1.1中，在步骤3执行完成后，connection不再被关闭，在connection有效的前提细，后面client不再需要执行步骤1，直接执行步骤2、3就可以。</p>
+<ul>
+<li>Client第一次发送请求，web container生成唯一的session ID(生成session ID的源码，如有兴趣，可以看下tomcat源码， 随机数+时间+jvmid)，并将其返回给client(在web container返回给client的response中)，web container上的这个HttpSession是临时的。</li>
+<li>后面Client在每次发送请求给服务器时，都将session ID发送给web container，这样web container就很容易区分出是哪个client.</li>
+<li>Web container使用这个session ID，找到对应的HttpSession，并将此次request与这个HttpSession联系起来。</li>
+</ul>
+<p>  </p>
+<h3 id="HttpSession生命周期："><a href="#HttpSession生命周期：" class="headerlink" title="HttpSession生命周期："></a><strong>HttpSession生命周期：</strong></h3><h6 id="1-什么时候创建HttpSession"><a href="#1-什么时候创建HttpSession" class="headerlink" title="1. 什么时候创建HttpSession"></a>1. 什么时候创建HttpSession</h6><p>1）.对于JSP：<br>　　是否浏览器访问服务端的任何一个JSP或Servlet，服务器都会立即创建一个HttpSession对象呢？ 不一定。<br>　　①.若当前的JSP或（Servlet）是客户端访问的当前WEB应用的第一个资源，且JSP的page指定的session属性为false，则服务器就不会为JSP创建一个HttpSession对象；<br>　　②.若当前JSP不是客户端访问的当前WEB应用的第一个资源，且其他页面已经创建一个HttpSession对象，则服务器也不会为当前JSP创建一个新的HttpSession对象，而会把和当前会话关联的那个HttpSession对象返回给当前的JSP页面。</p>
+<p>2）.page指令的session&#x3D;”false”到底表示什么意思：当前JSP页面禁用session隐含变量！但可以使用其他的显式的对象</p>
+<p>3）.对于Servlet而言：<br>　　若Servlet是客户端访问的第一个WEB应用的资源，则只有调用了request.getSession()或request.getSession(true) 才会创建HttpSession对象</p>
+<p>4）. 在Servlet中如何获取HttpSession对象？<br>　　request.getSession(boolean create):create为false,若没有和当前JSP页面关联的HttpSession对象,则返回null；<br>　　若有返回true create为true一定返回一个HTTPSession对象。若没有和昂前JSP页面关联的HttpSession对象，则服务器创建一个新的HttpSession对象返回，若有，则直接返回关联。<br>　　request.getSession()等同于request.getSession(true)</p>
+<h6 id="2-什么时候销毁HttpSession对象："><a href="#2-什么时候销毁HttpSession对象：" class="headerlink" title="2. 什么时候销毁HttpSession对象："></a>2. 什么时候销毁HttpSession对象：</h6><p>1）.直接调用HttpSession的invalidate（）方法：使HttpSession失效<br>2）.服务器卸载了当前Web应用。<br>3）.超出HttpSession的过期时间。</p>
+<p>设置HttpSession的过期时间：单位为S</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">session.setMaxInactiveInterval(5);</span><br><span class="line">out.print(session.getMaxInactiveInterval());</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--在web.xml文件中设置HttpSession过期时间。 --&gt;</span><br><span class="line">    &lt;session-config&gt;</span><br><span class="line">        &lt;session-timeout&gt;30&lt;/session-timeout&gt;</span><br><span class="line">    &lt;/session-config&gt;</span><br><span class="line">&lt;!--系统默认30分钟 --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>　　由于会有越来越多的用户访问服务器，因此Session也会越来越多。为防止内存溢出，服务器会把长时间内没有活跃的Session从内存删除。这个时间就是Session的超时时间。如果超过了超时时间没访问过服务器，Session就自动失效了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Session具有以下特点：</span><br><span class="line">（1）Session中的数据保存在服务器端；</span><br><span class="line">（2）Session中可以保存任意类型的数据；</span><br><span class="line">（3）Session默认的生命周期是30分钟，可以手动设置更长或更短的时间。</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">逸星河</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/14/HttpSession/">http://example.com/2022/08/14/HttpSession/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">逸星河</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HTTP/">HTTP</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/08/14/JS-this-%E6%8C%87%E5%90%91/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JS this 指向</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">逸星河</div><div class="author-info__description">疲惫生活中的英雄梦想</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HttpSession%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">HttpSession详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-client-server-connection"><span class="toc-number">1.1.</span> <span class="toc-text">1.client-server connection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HttpSession%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">HttpSession生命周期：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%88%9B%E5%BB%BAHttpSession"><span class="toc-number">1.1.1.0.0.1.</span> <span class="toc-text">1. 什么时候创建HttpSession</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%94%80%E6%AF%81HttpSession%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-number">1.1.1.0.0.2.</span> <span class="toc-text">2. 什么时候销毁HttpSession对象：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/08/14/HttpSession/" title="HttpSession"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HttpSession"/></a><div class="content"><a class="title" href="/2022/08/14/HttpSession/" title="HttpSession">HttpSession</a><time datetime="2022-08-14T15:22:47.000Z" title="发表于 2022-08-14 23:22:47">2022-08-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/14/JS-this-%E6%8C%87%E5%90%91/" title="JS this 指向"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS this 指向"/></a><div class="content"><a class="title" href="/2022/08/14/JS-this-%E6%8C%87%E5%90%91/" title="JS this 指向">JS this 指向</a><time datetime="2022-08-14T08:06:46.000Z" title="发表于 2022-08-14 16:06:46">2022-08-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/31/index/" title="Front-end Engineer"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Front-end Engineer"/></a><div class="content"><a class="title" href="/2022/07/31/index/" title="Front-end Engineer">Front-end Engineer</a><time datetime="2022-07-31T12:29:24.743Z" title="发表于 2022-07-31 20:29:24">2022-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/26/cssSelector/" title="CSS Selector"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS Selector"/></a><div class="content"><a class="title" href="/2022/07/26/cssSelector/" title="CSS Selector">CSS Selector</a><time datetime="2022-07-26T13:20:14.000Z" title="发表于 2022-07-26 21:20:14">2022-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/06/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/05/06/hello-world/" title="Hello World">Hello World</a><time datetime="2022-05-06T08:07:10.810Z" title="发表于 2022-05-06 16:07:10">2022-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 逸星河</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
